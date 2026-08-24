@@ -3,7 +3,7 @@ paths:
   train_data: data/sample_preferences.jsonl
   output_dir: outputs
 training:
-  method: dpo  # dpo | orpo | mock
+  method: mock  # dpo | orpo | mock (dpo/orpo need `pip install -e '.[train]'`)
   beta: 0.1
   lambda_orpo: 0.1
   max_length: 512

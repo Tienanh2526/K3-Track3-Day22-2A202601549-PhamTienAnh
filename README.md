@@ -55,9 +55,9 @@ tests/                  Unit tests for student work
 
 ## Production checklist
 
-- [ ] Dataset schema validated.
-- [ ] Train/eval split by prompt, not by row.
-- [ ] Config committed; generated artifacts ignored.
-- [ ] Metrics saved as JSON.
-- [ ] Safety regression prompts run before/after training.
-- [ ] Data card updated.
+- [x] Dataset schema validated (`load_jsonl`: line-numbered JSON/schema errors, duplicate-row detection).
+- [x] Train/eval split by prompt, not by row (`split_by_prompt`, seeded and deterministic).
+- [x] Config committed; generated artifacts ignored (`outputs/` in `.gitignore`).
+- [x] Metrics saved as JSON (`pref-lab evaluate` -> `outputs/metrics.json`, `pref-lab train` -> `outputs/train_metrics.json`).
+- [ ] Safety regression prompts run before/after training — no policy is actually fine-tuned yet (`PreferenceTrainer._train_real` for method=dpo/orpo is still `TODO(student)`, requires `pip install -e '.[train]'`); nothing to run the prompts in `docs/regression_prompts.md` against.
+- [x] Data card updated (`docs/data_card_template.md`).
